@@ -78,9 +78,9 @@ function showStats(data) {
         // Set title to username/repository
         document.title = $("#username").val() + "/" + $("#repository").val() + " - " + document.title;
 
-        // Sort by publish date
+        // Sort by creation date of the commit the release is targeting
         data.sort(function (a, b) {
-            return (a.published_at < b.published_at) ? 1 : -1;
+            return (a.created_at < b.created_at) ? 1 : -1;
         });
 
         $.each(data, function(index, item) {
